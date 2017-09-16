@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const credentialsPath = __dirname + '/../credentials.json');
+const credentialsPath = __dirname + '/../credentials.json';
 if(fs.existsSync(credentialsPath) || (process.argv[2] === '--config')) {
 	require('../lib/config.js')();
 } else {
