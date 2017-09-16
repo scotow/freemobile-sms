@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const api = require('../lib/freesmsapi.js');
 
 credentials = require('../credentials.json');
