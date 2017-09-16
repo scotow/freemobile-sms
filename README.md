@@ -13,7 +13,11 @@ A simple API and command line tools to send SMS using Free Mobile.
 
 ### Credentials
 
-Setup your credentials by editing the `credentials.json` file in the project's directory and fill it using the following pattern:
+Setup your credentials using one of the following methods:
+
+- Run `sms --config`
+
+- editing the `credentials.json` file in the project's directory and fill it using the following pattern:
 
 ```JSON
 {
