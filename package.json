@@ -1,0 +1,31 @@
+{
+  "name": "free-sms-api",
+  "version": "1.0.0",
+  "description": "Free mobile's sms API",
+  "main": "index.js",
+  "bin": {
+    "sms": "./bin/app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scotow/freemobile-sms.git"
+  },
+  "keywords": [
+    "free-mobile",
+    "sms",
+    "api",
+    "france"
+  ],
+  "author": "Scotow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Scotow/freemobile-sms/issues"
+  },
+  "homepage": "https://github.com/Scotow/freemobile-sms#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
