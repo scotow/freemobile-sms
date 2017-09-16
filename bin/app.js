@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const credentialsPath = __dirname + '/../credentials.json';
-if(fs.existsSync(credentialsPath) || (process.argv[2] === '--config')) {
+if(!fs.existsSync(credentialsPath) || (process.argv[2] === '--config')) {
 	require('../lib/config.js')();
 } else {
 	const api = require('../lib/freesmsapi.js');
