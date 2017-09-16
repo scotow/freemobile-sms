@@ -7,7 +7,7 @@
     "sms": "./bin/app.js"
   },
   "scripts": {
-	"install": "scripts/install.js",
+	"install": "node scripts/install.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
