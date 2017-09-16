@@ -1,5 +1,5 @@
 {
-  "name": "free-sms-api",
+  "name": "freemobile-sms",
   "version": "1.0.0",
   "description": "Free mobile's sms API",
   "main": "index.js",
