@@ -7,7 +7,7 @@
     "sms": "./bin/app.js"
   },
   "scripts": {
-	"install": "echo 'Run 'sms --config' to create credentials and use freemobile-sms as a global module.",
+	"install": "echo \"Run 'sms --config' to create credentials and use freemobile-sms as a global module.\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
