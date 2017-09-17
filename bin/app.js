@@ -15,6 +15,9 @@ if(!fs.existsSync(credentialsPath) || (process.argv[2] === '--config')) {
 	if(!message) throw SyntaxError('Invalid message.');
 
 	api.send(message, credentials)
+	.then(() => {
+		process.exit(0);
+	})
 	.catch(statusCode => {
 		process.exit(statusCode);
 	});
