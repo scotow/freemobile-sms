@@ -17,7 +17,7 @@ Setup your credentials using one of the following methods:
 
 - Run `sms --config`
 
-- editing the `credentials.json` file in the project's directory and fill it using the following pattern:
+- Editing the `credentials.json` file in the project's directory and fill it using the following pattern:
 
 ```JSON
 {
