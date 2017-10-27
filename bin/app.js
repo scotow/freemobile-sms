@@ -5,6 +5,25 @@ const fs = require('fs');
 
 const credentialsPath = path.join(__dirname, '..', 'credentials.json');
 
+const argv = require('yargs')
+	.option('f', {
+		alias: 'file',
+		describe: 'File(s) to be add to the SMS',
+		type: 'string',
+		nargs: 1,
+		coerce: (arg) => {
+			if(!fs.existsSync(arg) {
+				
+			});
+		}
+	})
+	.epilogue('For more information, find more information at https://github.com/Scotow/freemobile-sms.');
+	.argv
+;
+
+console.dir(argv);
+process.exit(0);
+
 if(!fs.existsSync(credentialsPath) || (process.argv[2] === '--config')) {
 	require('../lib/config.js')()
 	.then(sendMessage);

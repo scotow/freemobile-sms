@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/Scotow/freemobile-sms#readme",
   "dependencies": {
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "yargs": "^10.0.3"
   }
 }
