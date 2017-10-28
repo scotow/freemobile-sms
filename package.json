@@ -1,6 +1,6 @@
 {
   "name": "freemobile-sms",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Free mobile's sms API",
   "main": "index.js",
   "bin": {
