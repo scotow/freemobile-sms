@@ -6,7 +6,7 @@ A simple API and command line tools to send SMS using the Free Mobile 'notificat
 
 ### Prerequisites
 
-This module was developed using [Node.js](http://nodejs.org) (8.X) and was not tested with previous versions (even if it may work with previous releases).
+This module was developed using [Node.js](http://nodejs.org) 8.X and was not tested with previous versions (even if it may work with previous releases).
 
 ### How to install
 
