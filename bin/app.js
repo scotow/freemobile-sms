@@ -50,9 +50,6 @@ function sendMessage() {
 		}
 	});
 
-	// console.log(messages.length);
-	// process.exit(0);
-
 	api.send(messages, credentials)
 	.then(() => {
 		process.exit(0);
