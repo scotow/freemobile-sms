@@ -1,13 +1,13 @@
 {
   "name": "freemobile-sms",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Free mobile's sms API",
   "main": "index.js",
   "bin": {
     "sms": "./bin/app.js"
   },
   "scripts": {
-	"install": "echo \"Run 'sms --config' to create credentials and use freemobile-sms as a global module.\"",
+    "install": "echo \"Run 'sms --config' to create credentials and use freemobile-sms as a global module.\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/Scotow/freemobile-sms#readme",
   "dependencies": {
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "yargs": "^10.0.3"
   }
 }
