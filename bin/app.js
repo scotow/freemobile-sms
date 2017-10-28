@@ -7,7 +7,7 @@ const credentialsPath = path.join(__dirname, '..', 'credentials.json');
 
 if(!fs.existsSync(credentialsPath) || (process.argv[2] === '--config')) {
 	require('../lib/config.js')()
-	.then(sendMessage);
+	.then(() => sendMessage());
 } else {
 	sendMessage();
 }
