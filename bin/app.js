@@ -5,25 +5,6 @@ const fs = require('fs');
 
 const credentialsPath = path.join(__dirname, '..', 'credentials.json');
 
-const argv = require('yargs')
-	.option('f', {
-		alias: 'file',
-		describe: 'File(s) to be add to the SMS',
-		type: 'string',
-		nargs: 1,
-		coerce: (arg) => {
-			if(!fs.existsSync(arg) {
-				
-			});
-		}
-	})
-	.epilogue('For more information, find more information at https://github.com/Scotow/freemobile-sms.');
-	.argv
-;
-
-console.dir(argv);
-process.exit(0);
-
 if(!fs.existsSync(credentialsPath) || (process.argv[2] === '--config')) {
 	require('../lib/config.js')()
 	.then(sendMessage);
@@ -35,7 +16,44 @@ function sendMessage() {
 	const api = require('../lib/freesmsapi.js');
 	const credentials = require('../credentials.json');
 
-	api.send(process.argv.slice(2).join(' '), credentials)
+	const argv = require('yargs')
+		.option('f', {
+			alias: 'file',
+			describe: 'File(s) to be add to the SMS',
+			default: [],
+			type: 'array',
+			nargs: 1
+		})
+		.option('encoding', {
+			describe: 'File(s) encoding',
+			default: 'utf8',
+			type: 'string',
+			nargs: 1
+		})
+		.option('s', {
+			alias: 'split',
+			describe: 'Split each string arguments in separate messages',
+			default: false,
+			type: 'boolean'
+		})
+		.epilogue('For more information, find more information at https://github.com/Scotow/freemobile-sms.')
+		.argv
+	;
+
+	const messages = argv.split ? argv._ : [argv._.join(' ')];
+	argv.file.forEach((file) => {
+		try {
+			messages.push(fs.readFileSync(file, argv.encoding));
+		} catch(error) {
+			console.error(`${file}: No such file.`);
+			process.exit(1);
+		}
+	});
+
+	// console.log(messages.length);
+	// process.exit(0);
+
+	api.send(messages, credentials)
 	.then(() => {
 		process.exit(0);
 	})
