@@ -1,12 +1,12 @@
 # freemobile-sms
 
-💬 **A simple [free-mobile](http://mobile.free.fr) wrapper** 💬
+💬 **A simple [free-mobile](http://mobile.free.fr)'s sms API wrapper** 💬
 
 A simple API and command line tools to send SMS using the Free Mobile 'notification' option.
 
 ### Prerequisites
 
-This module was developed using [Node.js](http://nodejs.org) 8.X and was not tested with previous versions (even if it may work with previous releases).
+This module was developed using [Node.js](http://nodejs.org) 8.9.X and was not tested with previous versions (even if it may work with previous releases).
 
 ### How to install
 
@@ -31,12 +31,13 @@ This module was developed using [Node.js](http://nodejs.org) 8.X and was not tes
 const freemobile = require('freemobile-sms');
 
 freemobile.send('Hello, World!', credentials)
-.then((httpStatus) => {
-	// Return 200.
+.then(() => {
+	// Message(s) sent.
 })
-.catch((error) => {
+.catch(error => {
 	console.error('An error has occurred while sending the message.');
-	// An error has occurred, an Error is return if the credentials wasn't setup or if the message is incorrect, or the http code from the api call if it was different from 200.
+	// An error has occurred, an Error is return if the credentials wasn't setup or if the message is incorrect.
+	// NB: Be careful to don't overuse the api because it has a daily limit (maybe 300 messages per day).
 });
 ```
 
@@ -45,16 +46,25 @@ freemobile.send('Hello, World!', credentials)
 `sms Hello World!`
 > Send a SMS to your mobile phone with the 'Hello World!' text.
 
+`sms -s Hello World!`
+> Handle each argument as a single message (send two message 'Hello' and 'World!').
+
 `sms -f my_file.txt`
 > Send the content of the 'my_file.txt' file.
+
+`sms -f my_file.txt -e ascii`
+> Same as previous, but use ascii [encoding](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback) to read the file.
+
+`sms -c Hello World!`
+> (Re)configure your credentials before sending the 'Hello World!' message.
 
 ### Credentials
 
 Setup your credentials using one of the following methods:
 
-- Run `sms --config`
+- Run `sms -c` or `sms --config`
 
-- Editing the `credentials.json` file in the project's directory and fill it using the following pattern:
+- Create a `credentials.json` file in the project's directory and fill it using the following pattern:
 
 ```JSON
 {
@@ -62,6 +72,8 @@ Setup your credentials using one of the following methods:
 	"password": "YOUR_SECRET_KEY"
 }
 ```
+
+*NB: If no credentials are set when running the `sms` command, the credentials configuration process will be called automatically.*
 
 ### App
 
