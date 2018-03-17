@@ -47,7 +47,7 @@ freemobile.send('Hello, World!', credentials)
 > Send a SMS to your mobile phone with the 'Hello World!' text.
 
 `sms -s Hello World!`
-> Handle each argument as a single message (send two message 'Hello' and 'World!').
+> Handle each argument as a single message (send two messages 'Hello' and 'World!').
 
 `sms -f my_file.txt`
 > Send the content of the 'my_file.txt' file.
